@@ -1,0 +1,43 @@
+    /* CSS kodlari */
+    body {
+        margin: 0;            /* tashqi bo'shliq yo'q */
+        padding: 0;           /* ichki bo'shliq yo'q */
+        font-family: Arial, sans-serif; /* shrift turi */
+        background-color: #f0f0f0; /* fon rangi */
+    }
+    h1 {
+        text-align: center;   /* matn markazda joylashishi */
+        color: #333;          /* matn rangi */
+        size: 10cm;
+    }
+    h2 {
+        text-align: center;   /* matn markazda joylashishi */
+        color: #007BFF;       /* matn rangi */
+    }
+.parent {
+    display: flex;
+    justify-content: center; /* gorizontal markaz */
+    align-items: center;     /* vertikal markaz */
+    height: 45vh;           /* butun ekran balandligi */
+  }
+  .center {
+    display: flex;
+    justify-content: center; /* gorizontal markaz */
+    align-items: center;     /* vertikal markaz */
+    height: 50vh;           /* butun ekran balandligi */
+    width: 50vw;            /* butun ekran kengligi */
+    background-color: #f0f0f0; /* fon rangi */
+    border-radius: 10px;   /* burchaklar yumshatilishi */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* soyali effekt */
+    padding: 20px;         /* ichki bo'shliq */
+    margin: 20px;         /* tashqi bo'shliq */
+    font-family: Arial, sans-serif; /* shrift turi */
+    font-size: 16px;      /* shrift o'lchami */
+    color: #333;          /* matn rangi */
+    text-align: center;   /* matn markazda joylashishi */
+    text-decoration: none; /* matn ostiga chizish yo'q */
+    border: 2px solid #007BFF; /* chegarasi rangi va qalinligi */
+    transition: all 0.3s ease; /* o'zgarishlar animatsiyasi */
+    cursor: pointer;      /* sichqoncha ko'rsatgichini o'zgartirish */
+  }
+  
