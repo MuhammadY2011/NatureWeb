@@ -8,49 +8,96 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
 </head>
 <body>
-    <nav class="navbar navbar-dark bg-dark fixed-top">
+    <style>
+        .navbar {
+          height: 60px; /* Appbar balandligini kichikroq qilib belgiladik */
+          padding: 0 15px; /* Ichki bo'shliqni kichikroq qilish */
+        }
+      
+        .navbar img {
+          height: 40px; /* Logotipni kichikroq qilish */
+          width: auto; /* Nisbatni saqlash */
+        }
+      
+        .navbar-toggler {
+          padding: 5px 10px; /* Toggler knopkasini kichikroq qilish */
+        }
+      
+        .offcanvas-header h5 {
+          font-size: 18px; /* Drawer sarlavhasini kichikroq qilish */
+        }
+      
+        .offcanvas-body {
+          font-size: 14px; /* Drawer ichidagi matnni kichikroq qilish */
+        }
+
+        .navbar {
+        height: 60px; /* Appbar balandligini kichikroq qilib belgiladik */
+        padding: 0 15px; /* Ichki bo'shliqni kichikroq qilish */
+    }
+
+    .navbar img {
+        height: 40px; /* Logotipni kichikroq qilish */
+        width: auto; /* Nisbatni saqlash */
+    }
+
+    .navbar-toggler {
+        padding: 5px 10px; /* Toggler knopkasini kichikroq qilish */
+        position: absolute; /* O'ng yuqori burchakka joylash uchun */
+        top: 10px; /* Yuqoridan masofa */
+        right: 15px; /* O'ngdan masofa */
+    }
+
+    .offcanvas-header h5 {
+        font-size: 18px; /* Drawer sarlavhasini kichikroq qilish */
+    }
+
+    .offcanvas-body {
+        font-size: 14px; /* Drawer ichidagi matnni kichikroq qilish */
+    }
+      </style>
+    <nav class="navbar navbar-dark bg-dark">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Images</a>
+                <img src="tnc-logo-primary-registered-light-text.svg" height="350" width="350" alt="The Nature Conservancy">
           <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
             <div class="offcanvas-header">
-              <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Dark offcanvas</h5>
+              <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Drawer</h5>
               <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
-            <form class="d-flex mt-3" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-success" type="submit">Search</button>
-              </form>
+            <img src="tnc-logo-primary-registered-light-text.svg" alt="">
             <div class="offcanvas-body">
               <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                <li class="nav-item">
+                <li class="nav-item text-center">
                   <a class="nav-link active" aria-current="page" href="index.html">Home</a>
                 </li>
-                <button class="nav-item nav-link type="button data-bs-toggle="modal" data-bs-target="#exampleModal">Settings
+                <button type="button" class="nav-item nav-link" data-bs-toggle="modal" data-bs-target="#exampleModal" >
+                    Settings
+                   </button>
+                   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                     <div class="modal-dialog">
+                       <div class="modal-content">
+                         <div class="modal-header">
+                           <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                         </div>
+                         <div class="modal-body">
+                           In progress !
+                         </div>
+                         <div class="modal-footer">
+                           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                           <button type="button" class="btn btn-primary">Save changes</button>
+                         </div>
+                       </div>
+                     </div>
+                   </div>
 
-                </button>
-
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h1 class="modal-title fs-5" id="exampleModalLabel">Settings</h1>
-                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                          This function does not work yet.
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+            
 
                 </li>
-                <li class="nav-item dropdown">
+                <li class="nav-item text-center">
                   <a class="nav-link dropdown-toggle" href="profile.html" role="button"  aria-expanded="false">
                     Profile
                   </a>
@@ -64,7 +111,7 @@
 
       <div class="d-flex">
     <div class="d-flex justify-content-center gap-5 flex-wrap mt-5">
-        <div class="card" style="width: 18rem;">
+        <div class="card" style="width: 19rem;">
             <img src="istockphoto-485371557-612x612 (1).jpg" class="card-img-top" alt="Mountains">
             <div class="card-body">
                 <h5 class="card-title">Mountains</h5>
@@ -91,7 +138,7 @@
         <div class="card" style="width: 18rem;">
             <img src="istockphoto-1381637603-612x612.jpg" class="card-img-top" alt="SunRise">
             <div class="card-body">
-                <h5 class="card-title">SunRise</h5>
+                <h5 class="card-title">Flowers</h5>
                 <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint repudiandae saepe eos.</p>
                 <a href="istockphoto-1381637603-612x612.jpg" target="_blank" class="btn btn-primary">Show Picture</a>
             </div>
@@ -99,7 +146,7 @@
         <div class="card" style="width: 18rem;">
             <img src="spring-nature-scene-beautiful-landscape-tranquil-background-sunlight-scenic-beauty-meadow-backdrop-sunshine-green-grass-149811995.webp" class="card-img-top" alt="SunRise">
             <div class="card-body">
-                <h5 class="card-title">SunRise</h5>
+                <h5 class="card-title">Trees</h5>
                 <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint repudiandae saepe eos.</p>
                 <a href="spring-nature-scene-beautiful-landscape-tranquil-background-sunlight-scenic-beauty-meadow-backdrop-sunshine-green-grass-149811995.webp" target="_blank" class="btn btn-primary">Show Picture</a>
             </div>
@@ -107,105 +154,105 @@
         <div class="card" style="width: 18rem;">
             <img src="images (5).jpg" class="card-img-top" alt="SunRise">
             <div class="card-body">
-                <h5 class="card-title">SunRise</h5>
+                <h5 class="card-title">SunFlowers</h5>
                 <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint repudiandae saepe eos.</p>
-                <a href="istockphoto-517188688-612x612.jpg" target="_blank" class="btn btn-primary">Show Picture</a>
+                <a href="images (5).jpg" target="_blank" class="btn btn-primary">Show Picture</a>
             </div>
         </div>
         <div class="card" style="width: 18rem;">
             <img src="img.jpg" class="card-img-top" alt="SunRise">
             <div class="card-body">
-                <h5 class="card-title">SunRise</h5>
+                <h5 class="card-title">Spring</h5>
                 <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint repudiandae saepe eos.</p>
-                <a href="istockphoto-517188688-612x612.jpg" target="_blank" class="btn btn-primary">Show Picture</a>
+                <a href="img.jpg" target="_blank" class="btn btn-primary">Show Picture</a>
             </div>
         </div>
         <div class="card" style="width: 18rem;">
             <img src="fine-art-nature-photography.jpg" class="card-img-top" alt="SunRise">
             <div class="card-body">
-                <h5 class="card-title">SunRise</h5>
+                <h5 class="card-title">Mountains</h5>
                 <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint repudiandae saepe eos.</p>
-                <a href="istockphoto-517188688-612x612.jpg" target="_blank" class="btn btn-primary">Show Picture</a>
+                <a href="fine-art-nature-photography.jpg" target="_blank" class="btn btn-primary">Show Picture</a>
             </div>
         </div>
         <div class="card" style="width: 18rem;">
             <img src="20-mount-rainier-national-park.jpg" class="card-img-top" alt="SunRise">
             <div class="card-body">
-                <h5 class="card-title">SunRise</h5>
+                <h5 class="card-title">Mountains and Forset</h5>
                 <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint repudiandae saepe eos.</p>
-                <a href="istockphoto-517188688-612x612.jpg" target="_blank" class="btn btn-primary">Show Picture</a>
+                <a href="20-mount-rainier-national-park.jpg" target="_blank" class="btn btn-primary">Show Picture</a>
             </div>
         </div>
         <div class="card" style="width: 18rem;">
             <img src="images (4).jpg" class="card-img-top" alt="SunRise">
             <div class="card-body">
-                <h5 class="card-title">SunRise</h5>
+                <h5 class="card-title">Trees and dorog</h5>
                 <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint repudiandae saepe eos.</p>
-                <a href="istockphoto-517188688-612x612.jpg" target="_blank" class="btn btn-primary">Show Picture</a>
+                <a href="images (4).jpg" target="_blank" class="btn btn-primary">Show Picture</a>
             </div>
         </div>
         <div class="card" style="width: 18rem;">
             <img src="spring-landscape-nature-scene-trees-green-meadow-morning-sunlight-sunrise-fresh-field-349967275.webp" class="card-img-top" alt="SunRise">
             <div class="card-body">
-                <h5 class="card-title">SunRise</h5>
+                <h5 class="card-title">Spring Trees</h5>
                 <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint repudiandae saepe eos.</p>
-                <a href="istockphoto-517188688-612x612.jpg" target="_blank" class="btn btn-primary">Show Picture</a>
+                <a href="spring-landscape-nature-scene-trees-green-meadow-morning-sunlight-sunrise-fresh-field-349967275.webp" target="_blank" class="btn btn-primary">Show Picture</a>
             </div>
         </div>
         <div class="card" style="width: 18rem;">
-            <img src="spring-nature-scene-beautiful-landscape-tranquil-background-sunlight-scenic-beauty-meadow-backdrop-sunshine-green-grass-149811995.webp" class="card-img-top" alt="SunRise">
+            <img src="zakat.jpg" class="card-img-top" alt="SunRise">
             <div class="card-body">
-                <h5 class="card-title">SunRise</h5>
+                <h5 class="card-title">SunSet</h5>
                 <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint repudiandae saepe eos.</p>
-                <a href="istockphoto-517188688-612x612.jpg" target="_blank" class="btn btn-primary">Show Picture</a>
+                <a href="zakat.jpg" target="_blank" class="btn btn-primary">Show Picture</a>
             </div>
         </div>
         <div class="card" style="width: 18rem;">
             <img src="nature-1686808887.jpg" class="card-img-top" alt="SunRise">
             <div class="card-body">
-                <h5 class="card-title">SunRise</h5>
+                <h5 class="card-title">SunSet with field</h5>
                 <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint repudiandae saepe eos.</p>
-                <a href="istockphoto-517188688-612x612.jpg" target="_blank" class="btn btn-primary">Show Picture</a>
+                <a href="nature-1686808887.jpg" target="_blank" class="btn btn-primary">Show Picture</a>
             </div>
         </div>
         <div class="card" style="width: 18rem;">
             <img src="nature-scenery-beauty.webp" class="card-img-top" alt="SunRise">
             <div class="card-body">
-                <h5 class="card-title">SunRise</h5>
+                <h5 class="card-title">SunRise and Beauty flowers</h5>
                 <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint repudiandae saepe eos.</p>
-                <a href="istockphoto-517188688-612x612.jpg" target="_blank" class="btn btn-primary">Show Picture</a>
+                <a href="nature-scenery-beauty.webp" target="_blank" class="btn btn-primary">Show Picture</a>
             </div>
         </div>
         <div class="card" style="width: 18rem;">
             <img src="mountains-1113547_1280.jpg" class="card-img-top" alt="SunRise">
             <div class="card-body">
-                <h5 class="card-title">SunRise</h5>
+                <h5 class="card-title">sunset is just around the corner</h5>
                 <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint repudiandae saepe eos.</p>
-                <a href="istockphoto-517188688-612x612.jpg" target="_blank" class="btn btn-primary">Show Picture</a>
+                <a href="mountains-1113547_1280.jpg" target="_blank" class="btn btn-primary">Show Picture</a>
             </div>
         </div>
         <div class="card" style="width: 18rem;">
             <img src="images (6).jpg" class="card-img-top" alt="SunRise">
             <div class="card-body">
-                <h5 class="card-title">SunRise</h5>
+                <h5 class="card-title">Mounts</h5>
                 <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint repudiandae saepe eos.</p>
-                <a href="istockphoto-517188688-612x612.jpg" target="_blank" class="btn btn-primary">Show Picture</a>
+                <a href="images (6).jpg" target="_blank" class="btn btn-primary">Show Picture</a>
             </div>
         </div>
         <div class="card" style="width: 18rem;">
             <img src="images (7).jpg" class="card-img-top" alt="SunRise">
             <div class="card-body">
-                <h5 class="card-title">SunRise</h5>
+                <h5 class="card-title">Ocean</h5>
                 <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint repudiandae saepe eos.</p>
-                <a href="istockphoto-517188688-612x612.jpg" target="_blank" class="btn btn-primary">Show Picture</a>
+                <a href="images (7).jpg" target="_blank" class="btn btn-primary">Show Picture</a>
             </div>
         </div>
-        <div class="card" style="width: 18rem;">
+        <div class="card" style="width: 19rem;">
             <img src="istockphoto-1069539210-612x612.jpg" class="card-img-top" alt="SunRise">
             <div class="card-body">
-                <h5 class="card-title">SunRise</h5>
+                <h5 class="card-title">River</h5>
                 <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint repudiandae saepe eos.</p>
-                <a href="istockphoto-517188688-612x612.jpg" target="_blank" class="btn btn-primary">Show Picture</a>
+                <a href="istockphoto-1069539210-612x612.jpg" target="_blank" class="btn btn-primary">Show Picture</a>
             </div>
         </div>
     </div>
