@@ -9,9 +9,64 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.min.js" integrity="sha384-VQqxDN0EQCkWoxt/0vsQvZswzTHUVOImccYmSyhJTp7kGtPed0Qcx8rK9h9YEgx+" crossorigin="anonymous"></script>
 </head>
 <body>
+  <div class="modal" tabindex="-1" id="signupModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Sign Up Required</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Please complete the sign-up process before accessing this page.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="redirectToSignup()">Go to Sign Up</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Check if the user has completed the sign-up process
+     signupComplete = localStorage.getItem('signupComplete');
+
+    if (signupComplete === 'false') {
+        const modal = new bootstrap.Modal(document.getElementById('signupModal'));
+        modal.show();
+    }
+
+    function redirectToSignup() {
+        window.location.href = "signup.html";
+    }
+</script>
+  <style>
+    .navbar {
+      height: 50px;
+      padding: 0 15px;
+    }
+    .navbar img {
+      height: 40px;
+      width: auto;
+    }
+    .navbar-toggler {
+      padding: 5px 10px;
+    }
+    .offcanvas-header h5 {
+      font-size: 18px;
+    }
+    .offcanvas-body {
+      font-size: 14px;
+    }
+  </style>
+  
+
+  <!-- Navbar -->
   <nav class="navbar navbar-dark bg-dark fixed-top">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Drawer</a>
+      <a href="https://www.nature.org/en-us/" target="_blank" class="navbar-brand">
+        <img src="tnc-logo-primary-registered-light-text.svg" alt="The Nature Conservancy">
+      </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -20,6 +75,7 @@
           <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Drawer</h5>
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
+        <img src="tnc-logo-primary-registered-light-text.svg" alt="">
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
             <li class="nav-item">
@@ -29,115 +85,186 @@
               <a class="nav-link" href="countinue.html">Images</a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="profile.html">
-                Profile
+              <a class="nav-link" href="profile.html">Profile</a>
+              <a href="settings.html">
+                <button type="button" class="nav-item nav-link" data-bs-toggle="modal" data-bs-target="#exampleModal" >
+                 Settings
+                </button>
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Settings</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        In progress !
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </a>
             </li>
           </ul>
-          <form class="d-flex mt-3" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-success" type="submit">Search</button>
-            </style>
-            </h1>
-          </form>
         </div>
       </div>
     </div>
   </nav>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="settings.html">Settings</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="countinue.html">Image</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="profile.html">Profile</a>
-                  </li>
-                  <!-- Button trigger modal -->
-<button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Nature_News
-</button>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Nature_News</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+  <div class="container">
+
+    <!-- Section: Info Cards -->
+    <section class="container mt-5">
+      <div class="row">
+        <div class="col-md-6">
+          <h2><strong>Stepping Up Progress in this Defining Decade</strong></h2>
+          <p>Alongside communities, we’re urgently clearing obstacles and finding solutions to the climate and biodiversity crises.</p>
+        </div>
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-6 mb-4">
+              <h5 class="text-success">Who We Are &rsaquo;</h5>
+              <p>We are dedicated staff, scientists and members advancing effective, lasting conservation in more than 80 countries and territories.</p>
+            </div>
+            <div class="col-md-6 mb-4">
+              <h5 class="text-success">What We Do &rsaquo;</h5>
+              <p>To make the highest possible impact on the climate and biodiversity crises between now and 2030, we’re developing breakthrough ideas, amplifying local leaders and influencing policy.</p>
+            </div>
+            <div class="col-md-6 mb-4">
+              <h5 class="text-success">How To Help &rsaquo;</h5>
+              <p>There are so many ways to make positive change for our planet. Volunteer with us. Learn how to reduce your carbon footprint. Donate to conservation work.</p>
+            </div>
+            <div class="col-md-6 mb-4">
+              <h5 class="text-success">Where We Work &rsaquo;</h5>
+              <p>Dense rainforests, remote coral reefs and the hearts of major cities. Our strategies are as diverse as the habitats and geographies in which we work.</p>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="modal-body">
-        This function does not work yet.
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+    </section>
+  </div>
+
+  <!-- Info Cards bo‘limi tugaydi -->
+</section>
+</div>
+
+<!-- Goals for 2030 bo‘limi -->
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-4">
+      <h2><strong>Our Goals for 2030</strong></h2>
+      <p>We’re racing to hit these targets to help the world reverse climate change and biodiversity loss. Together, we find the paths to make change possible.</p>
+      <button class="btn btn-success mt-3">VIEW OUR PRIORITIES</button>
+    </div>
+    <div class="col-md-8">
+      <div class="row">
+        <div class="col-sm-6 mb-4">
+          <div class="d-flex">
+            <div class="me-3"><img src="icon1.png" alt="" width="30"></div>
+            <div>
+              <h4>3B</h4>
+              <p>Avoid or sequester 3 billion metric tons of carbon dioxide emissions annually—the same as taking 650 million cars off the road every year.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 mb-4">
+          <div class="d-flex">
+            <div class="me-3"><img src="icon2.png" alt="" width="30"></div>
+            <div>
+              <h4>100M</h4>
+              <p>Help 100 million people at severe risk of climate-related emergencies by safeguarding habitats that protect communities.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 mb-4">
+          <div class="d-flex">
+            <div class="me-3"><img src="icon3.png" alt="" width="30"></div>
+            <div>
+              <h4>650M</h4>
+              <p>Conserve 650 million hectares—a land area twice the size of India—of biodiverse habitats such as forests, grasslands and desert.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 mb-4">
+          <div class="d-flex">
+            <div class="me-3"><img src="icon4.png" alt="" width="30"></div>
+            <div>
+              <h4>4B</h4>
+              <p>Conserve 4 billion hectares of marine habitat—more than 10% of the world’s oceans—through protected areas, sustainable fishing and more.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 mb-4">
+          <div class="d-flex">
+            <div class="me-3"><img src="icon5.png" alt="" width="30"></div>
+            <div>
+              <h4>1M+30M</h4>
+              <p>Conserve 1 million kilometers of rivers—enough to stretch 25 times around the globe—plus 30 million hectares of lakes and wetlands.</p>
+              <h4>Nature Needs You</h4>
+              <p>What we do between now and 2030 will determine whether we can slow warming enough to avoid climate change’s worst impacts. We must drastically cut emissions and remove some carbon from the atmosphere. Fortunately, plants naturally absorb and store carbon. By protecting natural habitats and carefully managing farmland and forests, we can store billions of tons of this “living carbon.Climate change is here. We can limit further warming and the dangers it poses—if we act now. Those who will be the most affected–the next generation—have an essential role to play in driving change. ”</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 mb-4">
+          <div class="d-flex">
+            <div class="me-3"><img src="icon6.png" alt="" width="30"></div>
+            <div>
+              <h4>45M</h4>
+              <p>Support the leadership of 45 million people from Indigenous and local communities in stewarding their environment and securing rights.</p>
+              <h4>Our Goals for 2030</h4>
+              <p>Our planet faces the interconnected crises of rapid climate change and biodiversity loss. We have years, not decades, to address these existential threats.
+
+                The science is clear: We must act now to halt catastrophic climate change and biodiversity loss. What we do between now and 2030 will determine whether we slow warming to 1.5 degrees Celsius—the level scientists agree will avoid the worst impacts of climate change.
+                
+                Our actions will also determine whether we conserve enough land and water to slow the rapid acceleration of species loss. If we do both, we will safeguard people from the disastrous effects of these crises.
+                
+                So much can occur in a single lifetime. Three quarters of the carbon dioxide emissions driven by humans have occurred since 1950. We have seen a nearly 70% average decline of birds, amphibians, mammals, fish and reptiles since just 1970.
+                
+                There is no time for delay.</p>
+                
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
-            </ul>
-          </div>
-        </div>
-    </nav>
-  </div>
-  <div class="text-center">
-    <h1>Hello everyone</h1>
-    <h2>By: MuhammadYusuf</h2>
-  </div>
-  <p>Within the various uses of the word today, "nature" often refers to geology and wildlife. Nature can refer to the general.
-     realm of living beings, and in some cases to the processes associated with inanimate objects—the way that particular.
-      types of things exist and change of their own accord, such as the weather and geology of the Earth. It is often taken to mean.
-       The "natural environment" or wilderness—wild animals, rocks, forest, and in general those things that have not been substantially
-        altered by human intervention, or which persist despite human intervention. For example, manufactured objects and human interaction generally.
-     are not considered part of nature, unless qualified as, for example, "human nature" or "the whole of nature".
-     If you wanna show your nature, you can use this page. 
-    </p>
-    <h2>You can show images below,like this -> <style>
-      h2 {
-        text-align: center;
-        font-size: 24px;
-        margin-top: 20px;
-        color: #333;
-      }
-      .carousel-inner img {
-        width: 60%;
-        height: 60%;
-      }
-      .carousel-control-prev-icon,
-      .carousel-control-next-icon {
-        background-color: #303030;
-      }
-    </style>
-    </h2>
-    <div id="carouselExample" class="carousel slide">
-      <div class="carousel-inner text-center">
-        <div class="carousel-item active">
-          <img src="kompot.jpg" height="460" width="900" alt="...">
-        </div>
-        <div class="carousel-item">
-          <img src="kompota1.webp" height="460" width="900" alt="...">
-        </div>
-        <div class="carousel-item">
-          <img src="kompo12.jpg" height="460" width="900" alt="...">
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+<!-- Goals bo‘limi tugadi -->
+
+<!-- Yaqinda tugaydigan body va scriptlar qismi -->
+<script>
+  function goToSignUp() {
+    window.location.href = "sign up.html";
+  }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+</body>
+</html>
+<script>
+  // Check if the user has completed the sign-up process
+  const signupComplete = localStorage.getItem('signupComplete');
+
+  if (signupComplete === 'false') {
+      const modal = new bootstrap.Modal(document.getElementById('signupModal'));
+      modal.show();
+  }
+
+  function redirectToSignup() {
+      window.location.href = "signup.html";
+  }
+</script>
+
+
+
+  <script>
+    function goToSignUp() {
+      window.location.href = "sign up.html";
+    }
+  </script>
+  
 </body>
 </html>
